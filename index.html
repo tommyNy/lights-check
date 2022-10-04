@@ -7,6 +7,27 @@
     <title>Lights check</title>
 </head>
 <body>
-    <h1>Ion 200 RT / Flare RT</h1>
+    <div class="center">
+        <h1>Lights check</h1>
+        </br>
+        <button id="button" type="button" class="connect" onclick="onConnectButtonClick();">Connect</button>
+        </br>
+        <h1 id="deviceName"></h1>
+        <h1 id="batteryLevel"></h1>
+        <h1 id="lightMode"></h1>
+        <div id="changeLightMode" style="display: none;">
+            <h1 for="selectLightMode">Select light mode:</h1>
+            <select id="selectLightMode"  onchange="setLightMode()">
+                <option value="00">off</option>
+                <option value="01">01</option>
+                <option value="05">05</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="3f">3f</option>
+            </select>
+        </div>
+        <h1 id="status"></h1>
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>

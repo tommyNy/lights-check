@@ -115,8 +115,8 @@ function readLightMode() {
                 });
             return characteristic.readValue();
         }).then(value => {
-            var lightMode = value.getUint8(0).toString(16);
-            // console.log('Light mode is ' + lightMode);
+            // var lightMode = value.getUint8(0).toString(16);
+            console.log('Light mode is ' + lightMode);
             statusTextElement.innerHTML = '';
             // lightModeTextElement.innerHTML = 'Light mode: ' + lightMode;
             changeLightMode.style.display = "block";
