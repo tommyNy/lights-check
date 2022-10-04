@@ -12,28 +12,29 @@ h1 {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  padding: 10px;
 }
 
 .connect {
-  position: absolute;
+  position: relative;
   background-color: #4caf50;
   border: none;
   color: white;
   padding: 4px 32px;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 45px;
   border-radius: 12px;
 }
 
 .disconnect {
-  position: absolute;
+  position: relative;
   background-color: #ff0000;
   border: none;
   color: white;
   padding: 4px 32px;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 45px;
   border-radius: 12px;
 }

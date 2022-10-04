@@ -9,11 +9,12 @@ const characteristicLightMode = '71261001-3692-ae93-e711-472ba41689c9';
 // 3F
 
 const options = {
-    filters: [
-        { namePrefix: 'Flare' },
-        { namePrefix: 'Ion' }
-    ],
-    optionalServices: ["battery_service", serviceLightMode]
+    // filters: [
+    //     // { namePrefix: 'Flare' },
+    //     // { namePrefix: 'Ion' }
+    // ],
+    optionalServices: ["battery_service", serviceLightMode],
+    acceptAllDevices: true
 };
 
 let bluetoothDevice;
@@ -52,8 +53,8 @@ function onDisconnected(event) {
 }
 
 function onConnectButtonClick() {
-    console.log('Requesting Bluetooth Device...');
-    navigator.bluetooth.requestDevice(options)
+    if (isWebBluetoothEnabled()) {
+        navigator.bluetooth.requestDevice(options)
         .then(device => {
             bluetoothDevice = device;
             console.log('Connecting to GATT Server...');
@@ -91,8 +92,9 @@ function onConnectButtonClick() {
         })
         .catch(error => {
             console.log('Error: ' + error);
-            statusTextElement.innerHTML = 'Error: ' + error;
+            statusTextElement.innerHTML = error;
         });
+    }
 }
 
 function readLightMode() {
@@ -123,7 +125,7 @@ function readLightMode() {
         })
         .catch(error => {
             console.log('Error: ' + error);
-            statusTextElement.innerHTML = 'Error: ' + error;
+            statusTextElement.innerHTML = error;
         });
 }
 
@@ -151,6 +153,15 @@ function setLightMode() {
         })
         .catch(error => {
             console.log('Error: ' + error);
-            statusTextElement.innerHTML = 'Error: ' + error;
+            statusTextElement.innerHTML = error;
         });
+}
+
+function isWebBluetoothEnabled() {
+    if (navigator.bluetooth) {
+        return true;
+    } else {
+        statusTextElement.innerHTML = "Check browser compatibility<br/><a href=\"https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API\">https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API</a><br/>and enable 'Experimental Web Platform features' flag";
+        return false;
+    }
 }
