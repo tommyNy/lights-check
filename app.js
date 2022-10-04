@@ -6,15 +6,16 @@ const characteristicLightMode = '71261001-3692-ae93-e711-472ba41689c9';
 // 05
 // 07
 // 08
+// 3E -> Ion
 // 3F
 
 const options = {
-    filters: [
-        { namePrefix: 'Flare' },
-        { namePrefix: 'Ion' }
-    ],
+    // filters: [
+    //     { namePrefix: 'Flare' },
+    //     { namePrefix: 'Ion' }
+    // ],
     optionalServices: ["battery_service", serviceLightMode],
-    // acceptAllDevices: true
+    acceptAllDevices: true
 };
 
 let bluetoothDevice;
