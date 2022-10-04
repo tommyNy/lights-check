@@ -1,0 +1,39 @@
+body {
+  background-color: #222;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.connect {
+  position: absolute;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 4px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 12px;
+}
+
+.disconnect {
+  position: absolute;
+  background-color: #ff0000;
+  border: none;
+  color: white;
+  padding: 4px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 12px;
+}
