@@ -7,6 +7,12 @@ h1 {
   color: white;
 }
 
+p {
+  font-family: Consolas;
+  text-align: center;
+  color: white;
+}
+
 .center {
   position: absolute;
   left: 50%;
